@@ -1,10 +1,13 @@
 -#  This file is app/views/movies/index.html.haml
 %h1 All Movies
 
+=@filter
+
 = form_tag("/sort/#{@sortv}", :method => :get, :id => "ratings_form") do
   Include: 
   - @all_ratings.each do |rating|
     = rating
+    = @filter.include?(rating)
     = check_box_tag "ratings[#{rating}]", "", (@filter.include?(rating)? true:false), :id => "ratings_#{rating}"
   = submit_tag 'Refresh', :id => "ratings_submit"
 

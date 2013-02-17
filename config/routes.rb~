@@ -3,7 +3,7 @@ Cosc480Homework2::Application.routes.draw do
   root :to => 'movies#index'
   match 'sort/:sort/:filter' => 'movies#sort'
   match 'sort' => 'movies#sort'
-  match 'sort/:sort' => 'movies#sort'
+  match 'sort/:sort' => 'movie#sort'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

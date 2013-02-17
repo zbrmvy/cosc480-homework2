@@ -8,7 +8,6 @@ class MoviesController < ApplicationController
     key_array = Movie.ratings
     if session[:sort] != nil or session[:ratings] != nil
       redirect_to("/sort/#{session[:sort]}")
-    end
     if session[:ratings] == nil
       session[:ratings] = Movie.ratings
     end
