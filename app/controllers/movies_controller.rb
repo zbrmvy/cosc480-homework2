@@ -91,6 +91,9 @@ class MoviesController < ApplicationController
       @sortv = 'date'
       @all_ratings = Movie.ratings
       render 'index'
+    else
+      @movies = Movies.all
+      @sortv = ""
     end
   end
 end
